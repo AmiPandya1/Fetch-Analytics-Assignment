@@ -1,0 +1,62 @@
+Relational Schema Design
+
+1. Users Table
+Primary Key: userId
+Fields:
+_id (as userId)
+state
+createdDate
+lastLogin
+role
+active
+
+
+2. Receipts Table
+Primary Key: receiptId
+Foreign Key: userId (joins with Users table)
+Fields:
+_id (as receiptId)
+userId
+bonusPointsEarned
+bonusPointsEarnedReason
+createDate
+dateScanned
+finishedDate
+modifyDate
+pointsAwardedDate
+pointsEarned
+purchaseDate
+purchasedItemCount
+rewardsReceiptStatus
+totalSpent
+
+
+
+3. PurchasedItems Table (One-to-Many relationship with Receipts)
+Primary Key: itemId
+Foreign Key: receiptId (joins with Receipts table)
+Fields:
+itemId (unique identifier for purchased items)
+receiptId
+brandId (joins with Brands table)
+barcode
+itemName
+itemCategory
+price
+
+
+
+4. Brands Table
+Primary Key: brandId
+Fields:
+_id (as brandId)
+barcode
+brandCode
+category
+categoryCode
+cpg
+topBrand
+name
+
+
+

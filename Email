@@ -1,0 +1,42 @@
+Email 
+
+Subject: Data Quality Review and Next Steps for Optimizing Receipts, Users, and Brands Data
+
+Hi 
+
+I’ve reviewed the data across Receipts, Users, and Brands and identified several quality issues. Here’s an update on my findings and next steps.
+
+Data Quality Issues:
+
+Missing Values: Critical fields (e.g., userId, brandId) have null values.
+Duplicates: Duplicate records were found, particularly with _id values.
+
+Needed Actions:
+
+Missing Data: Clarify whether missing values should be filled or removed.
+Duplicates: Determine if deduplication needs to be enforced during data load.
+
+Optimization Needs:
+
+Business Rules: Clarify how to handle missing data to maintain accuracy in reporting.
+Data Load Pipeline: Understand the loading and processing steps to pinpoint quality issues.
+Expected Data Growth: Know the scaling expectations to optimize storage and query performance.
+
+Performance and Scaling Concerns:
+
+Query Performance: Large data joins may slow down queries, requiring indexing and optimization.
+Data Consistency: Enforcing foreign key relationships will be crucial for consistency.
+
+Next Steps:
+
+Review the data loading process for missing or invalid references.
+Establish rules for handling missing values.
+Implement validation to ensure data consistency and flag outliers.
+
+Let me know if you’d like to discuss further or have additional insights. I look forward to improving the data quality to meet business needs.
+
+
+
+Thanks
+Ami Pandya
+
