@@ -1,4 +1,41 @@
-Relational Schema Design
+ER Diagram
+
+
+           +------------+          +--------------+           +-------------------+
+          |   Users   |          |   Receipts   |           |    Brands         |
+          +------------+          +--------------+           +-------------------+
+          | userId (PK)|<------->| receiptId (PK)|<-------->| brandId (PK)      |
+          | state      |          | userId (FK)   |          | barcode           |
+          | createdDate|          | bonusPointsEarned|       | brandCode (FK)    |
+          | lastLogin  |          | bonusPointsEarnedReason|   | category          |
+          | role       |          | createDate     |          | categoryCode      |
+          | active     |          | dateScanned    |          | cpg_id            |
+          +------------+          | finishedDate   |          | cpf_reg           |
+                                   | modifyDate     |          | topBrand          |
+                                   | pointsAwardedDate|        | name              |
+                                   | pointsEarned   |          +-------------------+
+                                   | purchaseDate   |
+                                   | purchasedItemCount|
+                                   | rewardsReceiptStatus|
+                                   | totalSpent      |
+                                   +--------------+
+                                          ^
+                                          |
+                             +---------------------------+
+                             |   PurchasedItems          |
+                             +---------------------------+
+                             | itemId (PK)               |
+                             | receiptId (FK)            |
+                             | brandCode (FK)            |
+                             | barcode (FK)              |
+                             | finalPrice                |
+                             | itemPrice                 |
+                             | quantityPurchased         |
+                             | rewardsGroup              |
+                             | needsFetchReview          |
+                             | rewardsProductPartnerId(FK)|
+                             | campaignid (FK)           |
+                             +---------------------------+
 
 1. Users Table
 Primary Key: userId
@@ -37,12 +74,16 @@ Primary Key: itemId
 Foreign Key: receiptId (joins with Receipts table)
 Fields:
 itemId (unique identifier for purchased items)
-receiptId
-brandId (joins with Brands table)
-barcode
-itemName
-itemCategory
-price
+receiptId( joins with receipts table)
+brandCode (joins with Brands table)
+barcode (joins with Brands table)
+finalPrice
+itemPrice
+quantityPurchased
+rewardsGroup
+needsFetchReview
+rewardsProductPartnerId (joins with cpg id)
+campaignid
 
 
 
@@ -54,9 +95,9 @@ barcode
 brandCode
 category
 categoryCode
-cpg
+cpg_id
+cpf_reg
 topBrand
 name
-
 
 

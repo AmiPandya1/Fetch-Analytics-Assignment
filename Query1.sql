@@ -4,7 +4,7 @@ Query1
 
 WITH RecentMonth AS (
     SELECT 
-        p.brandId,
+        p.brandCode,
         COUNT(DISTINCT r.receiptId) AS receiptsScanned
     FROM 
         Receipts r
@@ -21,7 +21,7 @@ SELECT
 FROM 
     RecentMonth rm
 INNER JOIN 
-    Brands b ON rm.brandId = b.brandId
+    Brands b ON rm.brandCode = b.brandCode
 ORDER BY 
     rm.receiptsScanned DESC
 LIMIT 5;

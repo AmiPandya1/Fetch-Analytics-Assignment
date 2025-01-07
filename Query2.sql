@@ -3,7 +3,7 @@ Query2
 
 WITH MonthlyScannedReceipts AS (
     SELECT 
-        p.brandId,
+        p.brandCode,
         EXTRACT(MONTH FROM r.dateScanned) AS scanMonth,
         EXTRACT(YEAR FROM r.dateScanned) AS scanYear,
         COUNT(DISTINCT r.receiptId) AS receiptsScanned

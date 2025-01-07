@@ -16,7 +16,7 @@ UserReceipts AS (
     SELECT 
         r.receiptId,
         r.totalSpent,
-        p.brandId
+        p.brandCode
     FROM 
         Receipts r
     INNER JOIN 
@@ -30,7 +30,7 @@ SELECT
 FROM 
     UserReceipts ur
 INNER JOIN 
-    Brands b ON ur.brandId = b.brandId
+    Brands b ON ur.brandCode = b.brandCode
 GROUP BY 
     b.name
 ORDER BY 
